@@ -1,0 +1,19 @@
+<p><a href="/diretores"><span uk-icon="arrow-left"></span> Voltar para Diretores</a></p>
+
+<h2><span uk-icon="icon: camera; ratio: 1.5"></span> Detalhar Diretor</h2>
+
+<div class="uk-card uk-card-default uk-card-body">
+  <ul class="uk-list uk-list-divider">
+    <li><strong>Nome:</strong> {{diretor.nome}}</li>
+    <li><strong>Ano de Nascimento:</strong> {{diretor.anoNascimento}}</li>
+    <li><strong>Nacionalidade:</strong> {{diretor.nacionalidade}}</li>
+    <li>
+      <strong>Filmes:</strong>
+      <ul class="uk-list uk-list-bullet">
+        {{#each diretor.filmes}}
+          <li><a href="/filmes/{{this.id}}">{{this.nome}} ({{this.ano}})</a></li>
+        {{/each}}
+      </ul>
+    </li>
+  </ul>
+</div>

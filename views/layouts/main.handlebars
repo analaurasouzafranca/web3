@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo de Filmes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3/dist/css/uikit.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+
+<nav class="uk-navbar-container">
+  <div class="uk-navbar-left">
+    <a class="uk-navbar-item uk-logo" href="/">
+      <span class="uk-margin-small-right" uk-icon="icon: play-circle; ratio: 1.5"></span> Filmes
+    </a>
+  </div>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <li><a href="/filmes"><span class="uk-margin-small-right" uk-icon="video-camera"></span>Filmes</a></li>
+      <li><a href="/artistas"><span class="uk-margin-small-right" uk-icon="users"></span>Artistas</a></li>
+      <li><a href="/diretores"><span class="uk-margin-small-right" uk-icon="camera"></span>Diretores</a></li>
+      <li><a href="/fichas"><span class="uk-margin-small-right" uk-icon="file-text"></span>Fichas Técnicas</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="uk-section uk-section-muted"    style="color: #fbaf52;">
+  <div class="uk-container">
+    {{{body}}}
+  </div>
+</div>
+
+<div class="uk-section uk-section-secondary uk-section-xsmall uk-light" style="color: #fbaf52;">
+  <div class="uk-container uk-flex uk-flex-between uk-flex-middle">
+    <span>Catálogo de Filmes</span>
+    <a href="#" uk-totop uk-scroll></a>
+  </div>  
+</div>
+
+</body>
+</html>

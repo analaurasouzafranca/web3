@@ -1,0 +1,28 @@
+<h2><span uk-icon="icon: file-text; ratio: 1.5"></span> Lista de Fichas Técnicas</h2>
+
+<p>
+  <a href="/fichas/cadastrar" class="uk-link-heading">
+    <span uk-icon="plus-circle"></span> Cadastrar Ficha Técnica
+  </a>
+</p>
+
+<!-- LISTA -->
+<ul class="uk-list uk-list-divider uk-card uk-card-default uk-card-body"
+    uk-scrollspy="cls: uk-animation-fade; target: > li; delay: 100">
+
+  {{#each fichas}}
+    <li class="uk-flex uk-flex-between uk-flex-middle">
+      <a href="/fichas/{{this.id}}">Ficha de {{this.filme.nome}} - {{this.duracao}} min</a>
+      <span>
+        <a href="/fichas/{{this.id}}/editar" class="uk-icon-link uk-margin-small-right" uk-icon="pencil"></a>
+        <form action="/fichas/{{this.id}}?_method=DELETE" method="POST" style="display: inline;">
+          <button type="submit" class="uk-icon-link" uk-icon="trash"
+                style="border:0; background:none; padding:0; cursor:pointer;"></button>
+        </form>
+      </span>
+    </li>
+  {{else}}
+    <li>Nada cadastrado ainda.</li>
+  {{/each}}
+
+</ul>

@@ -1,0 +1,30 @@
+<p><a href="/filmes"><span uk-icon="arrow-left"></span> Voltar para Filmes</a></p>
+
+<h2><span uk-icon="icon: video-camera; ratio: 1.5"></span> Detalhar Filme</h2>
+
+<div class="uk-card uk-card-default uk-card-body">
+  <ul class="uk-list uk-list-divider">
+    <li><strong>Nome:</strong> {{filme.nome}}</li>
+    <li><strong>Ano:</strong> {{filme.ano}}</li>
+    <li>
+      <strong>Diretor:</strong>
+      <a href="/diretores/{{filme.diretor.id}}">{{filme.diretor.nome}} - {{filme.diretor.anoNascimento}} - {{filme.diretor.nacionalidade}}</a>
+    </li>
+    <li>
+      <strong>Ficha Técnica:</strong>
+      {{#if filme.ficha}}
+        <a href="/fichas/{{filme.ficha.id}}">{{filme.ficha.duracao}} min - {{filme.ficha.pais}} - {{filme.ficha.idioma}}</a>
+      {{else}}
+        Sem ficha cadastrada
+      {{/if}}
+    </li>
+    <li>
+      <strong>Artistas:</strong>
+      <ul class="uk-list uk-list-bullet">
+        {{#each filme.artistas}}
+          <li><a href="/artistas/{{this.id}}">{{this.nome}} - {{this.anoNascimento}}</a></li>
+        {{/each}}
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,41 @@
+<h2><span uk-icon="icon: pencil; ratio: 1.5"></span> Editar Filme</h2>
+
+<form action="/filmes/{{filme.id}}?_method=PUT" method="POST" class="uk-form-stacked uk-width-1-2@m">
+
+  <div class="uk-margin">
+    <label class="uk-form-label">Nome do Filme:</label>
+    <div class="uk-form-controls">
+      <input class="uk-input" type="text" name="nome" value="{{filme.nome}}">
+    </div>
+  </div>
+  <div class="uk-margin">
+    <label class="uk-form-label">Ano:</label>
+    <div class="uk-form-controls">
+      <input class="uk-input" type="number" name="ano" value="{{filme.ano}}">
+    </div>
+  </div>
+  <div class="uk-margin">
+    <label class="uk-form-label">Diretor:</label>
+    <div class="uk-form-controls">
+      <select class="uk-select" name="diretorId">
+        {{#each diretores}}
+          <option value="{{this.id}}" {{#if (eq this.id @root.filme.diretorId)}}selected{{/if}}>{{this.nome}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <label class="uk-form-label">Artistas:</label>
+    <div class="uk-form-controls">
+      <select class="uk-select" name="artistas" multiple>
+        {{#each artistas}}
+          <option value="{{this.id}}">{{this.nome}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <input type="submit" class="uk-button uk-button-primary" value="Editar">
+  <a href="/filmes" class="uk-margin-left">Cancelar</a>
+
+</form>

@@ -1,0 +1,43 @@
+<h2><span uk-icon="icon: pencil; ratio: 1.5"></span> Editar Ficha Técnica</h2>
+
+<form action="/fichas/{{ficha.id}}?_method=PUT" method="POST" class="uk-form-stacked uk-width-1-2@m">
+
+  <div class="uk-margin">
+    <label class="uk-form-label">Filme:</label>
+    <div class="uk-form-controls">
+      <select class="uk-select" name="filmeId">
+        {{#each filmes}}
+          <option value="{{this.id}}" {{#if (eq this.id @root.ficha.filmeId)}}selected{{/if}}>{{this.nome}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <label class="uk-form-label">Duração (minutos):</label>
+    <div class="uk-form-controls">
+      <input class="uk-input" type="number" name="duracao" value="{{ficha.duracao}}">
+    </div>
+  </div>
+  <div class="uk-margin">
+    <label class="uk-form-label">País:</label>
+    <div class="uk-form-controls">
+      <input class="uk-input" type="text" name="pais" value="{{ficha.pais}}">
+    </div>
+  </div>
+  <div class="uk-margin">
+    <label class="uk-form-label">Idioma:</label>
+    <div class="uk-form-controls">
+      <input class="uk-input" type="text" name="idioma" value="{{ficha.idioma}}">
+    </div>
+  </div>
+  <div class="uk-margin">
+    <label class="uk-form-label">Orçamento:</label>
+    <div class="uk-form-controls">
+      <input class="uk-input" type="text" name="orcamento" value="{{ficha.orcamento}}">
+    </div>
+  </div>
+
+  <input type="submit" class="uk-button uk-button-primary" value="Editar">
+  <a href="/fichas" class="uk-margin-left">Cancelar</a>
+
+</form>

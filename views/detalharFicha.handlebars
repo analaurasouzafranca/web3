@@ -1,0 +1,16 @@
+<p><a href="/fichas"><span uk-icon="arrow-left"></span> Voltar para Fichas Técnicas</a></p>
+
+<h2><span uk-icon="icon: file-text; ratio: 1.5"></span> Detalhar Ficha Técnica</h2>
+
+<div class="uk-card uk-card-default uk-card-body">
+  <ul class="uk-list uk-list-divider">
+    <li>
+      <strong>Filme:</strong>
+      <a href="/filmes/{{ficha.filme.id}}">{{ficha.filme.nome}} ({{ficha.filme.ano}})</a>
+    </li>
+    <li><strong>Duração:</strong> {{ficha.duracao}} min</li>
+    <li><strong>País:</strong> {{ficha.pais}}</li>
+    <li><strong>Idioma:</strong> {{ficha.idioma}}</li>
+    <li><strong>Orçamento:</strong> {{ficha.orcamento}}</li>
+  </ul>
+</div>

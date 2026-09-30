@@ -1,0 +1,33 @@
+<p><a href="/artistas"><span uk-icon="arrow-left"></span> Voltar para Artistas</a></p>
+
+<h2><span uk-icon="icon: users; ratio: 1.5"></span> Detalhar Artista</h2>
+
+<div class="uk-card uk-card-default">
+
+  {{#if artista.foto}}
+    <!-- IMAGEM: uk-cover faz a foto preencher o espaço -->
+    <div class="uk-card-media-top uk-cover-container" style="height: 300px;">
+      <img src="{{artista.foto}}" alt="Foto do artista" uk-cover>
+    </div>
+  {{/if}}
+
+  <div class="uk-card-body">
+    <ul class="uk-list uk-list-divider">
+      <li><strong>Nome:</strong> {{artista.nome}}</li>
+      <li><strong>Nome Artístico:</strong> {{artista.nomeArtistico}}</li>
+      <li><strong>Ano de Nascimento:</strong> {{artista.anoNascimento}}</li>
+      <li>
+        <strong>Em atividade?</strong>
+        {{#if artista.emAtividade}}Sim{{else}}Não{{/if}}
+      </li>
+      <li>
+        <strong>Filmes:</strong>
+        <ul class="uk-list uk-list-bullet">
+          {{#each artista.filmes}}
+            <li><a href="/filmes/{{this.id}}">{{this.nome}} ({{this.ano}})</a></li>
+          {{/each}}
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
